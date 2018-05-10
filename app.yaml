@@ -1,0 +1,54 @@
+# https://cloud.google.com/appengine/docs/flexible/nodejs/configuring-your-app-with-app-yaml
+
+env: flex
+runtime: nodejs
+
+#skip_files:
+#- REGEX
+
+resources:
+  cpu: 1
+  memory_gb: 0.5 # memory_gb = cpu * [0.9 >=, <= 6.5] - 0.4
+  disk_size_gb: 10
+  #volumes:
+  #- name: ramdisk1 # available on system as /mnt/ramdisk1
+    #volume_type: tmpfs
+    #size_gb: 0.5
+
+#network:
+  #instance_tag: TAG_NAME
+  #name: NETWORK_NAME
+  #subnetwork_name: SUBNETWORK_NAME
+  #forwarded_ports:
+    #- PORT
+    #- HOST_PORT:CONTAINER_PORT
+    #- PORT/tcp
+    #- HOST_PORT:CONTAINER_PORT/udp
+
+#automatic_scaling:
+  #min_num_instances: 1
+  #max_num_instances: 15
+  #cool_down_period_sec: 120
+  #cpu_utilization:
+    #target_utilization: 0.6
+
+#manual_scaling:
+  #instances: 5
+
+#env_variables:
+  #SOME_VAR: "hello it's me"
+
+#readiness_check:
+  #path: "/readiness_check"
+  #check_interval_sec: 5
+  #timeout_sec: 4
+  #failure_threshold: 2
+  #success_threshold: 2
+  #app_start_timeout_sec: 300
+
+#liveness_check:
+  #path: "/liveness_check"
+  #check_interval_sec: 30
+  #timeout_sec: 4
+  #failure_threshold: 2
+  #success_threshold: 2
